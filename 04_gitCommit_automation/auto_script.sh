@@ -30,9 +30,11 @@ echo '##### auto push start #####'
 baseDir=/home/wogy12395/git/shell-script/
 cd ${baseDir}
 
+REMOTE_REPO=$(git remote)
+WORKING_BRANCH=$(git branch --list | head -n 1 | awk '{print $2}')
 
-git pull origin auto
-echo "> pull Complete"
+git pull ${REMOTE_REPO} ${WORKING_BRANCH}
+echo "> pull complete from remote:${REMOTE_REPO} branch:${WORKING_BRANCH}"
 
 fileName=$(git status -u -s | head -n 1)
 fileName=$(echo ${fileName} | awk '{print $2}')
@@ -44,10 +46,9 @@ fi
 
 commitMsg=$(cat ${fileName} | head -n 1)
 
-
 git add ./
 git status
 git commit -m "${commitMsg}"
-git push -u origin main
+git push -u ${REMOTE_REPO} ${WORKING_BRANCH}
 
-echo "##### auto push end #####
+echo "##### auto push end #####"
