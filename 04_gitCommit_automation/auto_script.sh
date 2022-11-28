@@ -9,36 +9,36 @@ response=$(curl --location -g --request GET 'https://www.waytothem.com/blog') ||
 titles=($(echo ${response} | grep -Po '<strong class="title_post">.*?</strong>'))
 dates=($(echo ${response}  | grep -Po '<p class="date">.*?</p>'))
 
-result="<!-- Blog-Post -->"
+echo -e "<!-- Blog-Post -->\n" > README.md
 
 for idx in "${!titles[@]}";
 do
-	title=${titles[${idx}]} 
-	date=${dates[${idx}]}
+        title=${titles[${idx}]}
+        date=${dates[${idx}]}
 
-	result+="${title}${date}"
+        echo -e "${title}\n${date}\n" >> README.md
 done
-result+="<!-- Blog-Post -->"
-
-echo ${result} > README.md
+echo "<!-- Blog-Post -->" >> README.md
 }
+
 
 echo '#### creating README.md ####'
 create_md
 echo '#### complete README.md ####'
 
-
-
 echo '##### auto push start #####'
-
 baseDir=/home/wogy12395/git/shell-script/
 cd ${baseDir}
+
+
+git pull origin auto
+echo "> pull Complete"
 
 fileName=$(git status -u -s | head -n 1)
 fileName=$(echo ${fileName} | awk '{print $2}')
 
 if [[ -z "${fileName}" ]]; then
-	echo "##### File Not Fount #####"
+	echo "##### File Not Found #####"
 	exit 1
 fi
 
@@ -50,4 +50,4 @@ git status
 git commit -m "${commitMsg}"
 git push -u origin main
 
-echo "##### auto push end #####"
+echo "##### auto push end #####
