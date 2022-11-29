@@ -1,0 +1,5 @@
+#!/bin/bash
+
+script=${0}
+
+echo "This File name is ${script}"
