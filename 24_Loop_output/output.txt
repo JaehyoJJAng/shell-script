@@ -1,0 +1,3 @@
+/home/user-01/git is a directory
+/home/user-01/utils is a directory
+/home/user-01/utils.sh is a file
