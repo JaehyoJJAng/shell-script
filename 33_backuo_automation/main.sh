@@ -25,6 +25,13 @@ else
 	exit 1
 fi
 
+# Check DESTINATION DIRECTORY
+if [[ ! -d ${DESTINATION} ]]
+then
+	echo -e "\n ${DESTINATION} does not exists"
+	mkdir -p ${DESTINATION}
+fi
+
 
 TARGETS=$(cat ${CONFIG_FILE})
 
