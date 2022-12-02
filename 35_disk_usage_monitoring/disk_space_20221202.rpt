@@ -1,0 +1,15 @@
+============ Top Ten Disk Space Usage ==============
+for  /var/log /home Directories
+============                          ==============
+
+The /var/log Directory:
+1:	98340	/var/log/journal/d575371586b64e1ba12c67b1a60891cb
+2:	5748	/var/log
+3:	900	/var/log/installer
+4:	136	/var/log/apt
+5:	44	/var/log/unattended-upgrades
+6:	32	/var/log/cups
+7:	4	/var/log/speech-dispatcher
+8:	4	/var/log/private
+9:	4	/var/log/openvpn
+10:	4	/var/log/journal
