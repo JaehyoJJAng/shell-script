@@ -17,7 +17,7 @@ exec 3>> ${SAVE_F}
 echo -e "\n\n<!-- Blog-Post -->\n" >&3
 while IFS=',' read text dated
 do
-	formattedDate="$(LANG=en_US date '+%b %-d, %Y' -d "${dated}")"
+	formattedDate="$(LANG=en_US date '+%b %-d, %Y' -d "${dated}")" 
 	echo "-  ${text} ${formattedDate}" >&3
 done < ../csv/parsing.csv
 
