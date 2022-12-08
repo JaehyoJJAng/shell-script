@@ -6,5 +6,5 @@ then
 	${git} config user.email "yshrim12@naver.com"
 	${git} add -A
 	${git} commit -m "Update README"
-	${git} push -u origin main
+	${git} push -u origin auto
 fi
