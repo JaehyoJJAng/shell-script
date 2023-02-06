@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 # Installed oh my zsh
-/usr/bin/apt-get install -y curl && sh -c "$(curl -fsSL <https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh>)" || echo "Package Installed Error" && exit 1
+/usr/bin/apt-get install -y curl && sh -c "$(curl -fsSL <https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh>)" <<< y || echo "Package Installed Error" && exit 1
 
 # Auto Suggestion Installed
 /usr/bin/git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
